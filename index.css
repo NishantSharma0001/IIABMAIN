@@ -1,0 +1,158 @@
+/* index.css — modern IIAB homepage
+   Fonts: Poppins
+   Keep images in ./images/  — update paths as needed
+*/
+
+:root{
+  --bg-dark:#071026;
+  --accent:#00e6a8;
+  --muted:#e8ecf1;
+  --card:#0c2540;
+  --glass: rgba(255,255,255,0.04);
+}
+
+*{box-sizing: border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;color:#11493b;background:#e18421}
+
+/* NAVBAR */
+.site-header .navbar {
+  padding: 0.6rem 1.25rem;
+  background: #e18421; /* आपका भगवा रंग */
+  position: fixed;     /* FIXED navbar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;        /* हमेशा ऊपर दिखे */
+}
+
+
+.site-header .navbar.scrolled {
+  background: #e18421; /* same color always */
+  backdrop-filter: none;
+}
+.brand-logo{width:44px;height:44px;object-fit:contain;margin-right:10px}
+.brand-text .brand-title{font-weight:700;letter-spacing:0.6px}
+.brand-text .brand-sub{display:block;font-size:11px;color:var(--muted)}
+
+/* NAV LINKS */
+.navbar .nav-link{color:#dfeff0;margin-right:8px}
+.navbar .nav-link:hover{color:var(--accent)}
+.btn-cta{background:var(--accent);color:#021023;border-radius:6px;padding:.45rem .9rem;font-weight:600}
+
+/* HERO */
+.hero {
+  margin-top: 80px; /* navbar height के बराबर */
+}
+.hero{
+  position:relative;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+  background:
+  
+    url('./images/Astrobio\ pic.jpg') center/cover no-repeat;
+}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,8,28,0.4), rgba(2,8,28,0.6))}
+.hero-content{position:relative;z-index:2;color:#e7fbf5;max-width:980px}
+.hero h1{font-size:2.2rem;margin-bottom:.6rem;line-height:1.05}
+.hero .lead{color:var(--muted);font-size:1.05rem}
+.hero-ctas .btn{border-radius:8px}
+.hero-stats{margin-top:22px;gap:26px}
+.stat{margin:0 20px;text-align:center}
+.stat strong{display:block;font-size:1.15rem;color:#fff}
+.stat span{color:var(--muted);font-size:.9rem}
+
+/* SECTIONS */
+.section{padding:60px 0}
+.section-light{background:linear-gradient(180deg,#071026 0%, #071726 100%);color:#e9f9f6}
+.section-dark{background:#021027;color:#dffbf1}
+.section-header h2{font-size:1.6rem;margin-bottom:.25rem}
+.section-header p{color:var(--muted)}
+
+/* ABOUT */
+.checklist{list-style: none;padding:0;margin-top:10px}
+.checklist li{position:relative;padding-left:24px;margin:10px 0;color:var(--muted)}
+.checklist li:before{content:'\f00c';font-family:Boxicons;position:absolute;left:0;color:var(--accent)}
+
+/* FEATURE CARDS */
+.card-feature{
+  background:transparent;border:1px solid rgba(255,255,255,0.04);padding:24px;border-radius:12px;min-height:200px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:14px;color:#eaf9f5;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+.card-icon{font-size:30px;background:var(--glass);padding:12px;border-radius:10px;color:var(--accent)}
+.card-feature h4{margin:0;font-size:1.05rem}
+.card-feature p{color:var(--muted);margin:0}
+
+/* PROGRAM LIST */
+.program-list .program{margin-bottom:18px}
+.program-list h5{margin:0}
+
+/* GALLERY */
+#gallery img{height:160px;object-fit:cover;border-radius:8px;}
+
+/* PARTNERS */
+.partner-logos{gap:20px}
+.partner-logo{height:48px;margin:0 12px;opacity:0.9;filter:grayscale(0.1);}
+
+/* FOOTER */
+.site-footer{background:#040613;color:#bcd7d0;padding:46px 0}
+.site-footer h4{color:#fff}
+.site-footer .muted{color:var(--muted)}
+.social-links .social{display:inline-block;margin-right:8px;color:#cfeee4;font-size:20px}
+.newsletter-form .form-control{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e9fbf5}
+
+/* BACK TO TOP */
+#topbtn{position:fixed;right:18px;bottom:18px;background:var(--accent);border:0;padding:10px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,0.4);color:#00131a;opacity:0;transform:translateY(6px);transition:all .25s ease;z-index:999}
+#topbtn.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media (min-width:992px){
+  .hero h1{font-size:2.8rem}
+  .hero .lead{font-size:1.15rem}
+}
+@media (max-width:768px){
+  .brand-text .brand-sub{display:none}
+  .hero{padding:60px 16px}
+  .hero-stats{flex-direction:column;gap:8px}
+}
+
+/* small utility */
+.muted{color:var(--muted)}
+.btn-primary{background:var(--accent);border:none;color:#00131a}
+.btn-outline-primary{border:1px solid rgba(255,255,255,0.06);color:#eaf9f5}
+
+.tri-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.tri-text {
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+  color: transparent;      /* Text को transparent करेंगे */
+}
+/* tirange ka colour iiab me */
+.tri-soft span {
+  font-weight: 700;
+  text-shadow: 0px 1px 3px rgba(0,0,0,0.35); /* हल्का shadow */
+}
+
+/* हल्का केसरिया */
+.saffron {
+  color: rgba(255, 103, 31, 0.65);    /* 65% opacity */
+}
+
+/* हल्का सफेद */
+.white {
+  color: rgba(255, 255, 255, 0.70);   /* 70% opacity */
+}
+
+/* हल्का हरा */
+.green {
+  color: rgba(4, 125, 65, 0.99);      /* 65% opacity */
+}
